@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# --- click action (Waybar on-click -> this_script toggle) ---
+if [ "${1-}" = "toggle" ]; then
+  playerctl play-pause >/dev/null 2>&1 || true
+  exit 0
+fi
+
 # --- helpers ---
 pango_escape() { sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g'; }
 json_escape()  { sed -e 's/\\/\\\\/g' -e 's/"/\\"/g' -e ':a;N;$!ba;s/\n/ /g'; }
@@ -22,21 +28,6 @@ else
 fi
 tip_pango=$(printf '%s' "$tip_raw" | pango_escape)
 tip_json=$(printf '%s' "$tip_pango" | json_escape)
-
-# --- notify on track change (plain text, no markup) ---
-cache="/tmp/waybar_nowplaying.cache"
-if [ "$status" = "Playing" ] && [ -n "$title$title$artist" ]; then
-  current="$(printf '%s — %s' "${artist:-Unknown}" "${title:-Unknown}" | clean)"
-  if [ -f "$cache" ]; then
-    prev=$(cat "$cache" || true)
-    if [ "$current" != "$prev" ]; then
-      notify-send -a "Now Playing" -i multimedia-audio-player \
-        "Now playing" \
-        " $(printf '%s' "${artist:-Unknown}" | clean)\n $(printf '%s' "${title:-Unknown}" | clean)"
-    fi
-  fi
-  printf '%s' "$current" > "$cache"
-fi
 
 # --- output for Waybar ---
 printf '{ "text": "%s", "tooltip": "%s" }\n' "$icon" "$tip_json"

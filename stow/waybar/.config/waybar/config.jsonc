@@ -7,7 +7,8 @@
     "hyprland/workspaces",
     "custom/music-prev",
     "custom/music",
-    "custom/music-next"
+    "custom/music-next",
+    "mpris"
   ],
 
   "modules-center": ["clock"],
@@ -56,22 +57,35 @@
     "interval": 0
   },
 
+"mpris": {
+  "player": "playerctld",
+  "ignored-players": [],
+  "ignore-inactive-players": true,
+  "format": "󱑽  {artist} — {title}",
+  "format-paused": "{artist} — {title}",
+  "max-length": 50,
+  "tooltip": true,
+  "on-click": "",
+  "on-scroll-up": "",
+  "on-scroll-down": ""
+},
+
   "clock": {
     "timezone": "Europe/Bucharest",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
-	"calendar": {
-		"mode"          : "year",
-		"mode-mon-col"  : 3,
-		"weeks-pos"     : "right",
-		"on-scroll"     : 1,
-		"format": {
+	  "calendar": {
+		  "mode"          : "year",
+		  "mode-mon-col"  : 3,
+		  "weeks-pos"     : "right",
+		  "on-scroll"     : 1,
+		  "format": {
             "months":   "<span color='#ffffff'><b>{}</b></span>",
             "days":     "<span color='#cccccc'><b>{}</b></span>",
             "weeks":    "<span color='#aaaaaa'><b>W {}</b></span>",
             "weekdays": "<span color='#dddddd'><b>{}</b></span>",
             "today":    "<span color='#1793D1'><b><u>{}</u></b></span>"
            }
-	 },
+	  },
     "format": "{:%d %b %Y - %H:%M:%S}",
     "interval": 1
   },
