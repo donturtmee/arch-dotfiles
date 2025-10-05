@@ -31,7 +31,7 @@ I3_PKGS=(picom feh xorg-xrandr rofi)
 # Repo browsers:
 BROWSER_PKGS=(firefox)           # official repo (pacman)
 # AUR browsers:
-BROWSER_AUR=(brave-bin)          # AUR (prebuilt binary)
+BROWSER_AUR=()          # AUR (prebuilt binary)
 
 # ---------- DESKTOP APPS (REPO) ----------
 # General user applications installed from the official repos.
