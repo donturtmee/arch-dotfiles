@@ -17,7 +17,7 @@ set -euo pipefail
 # ---------- CORE ----------
 # Minimal CLI toolkit present on every machine.
 # Includes GNU Stow for dotfiles, network/file tools, JSON parsing, and quick system info.
-CORE_PKGS=(stow curl wget jq ripgrep fd btop)
+CORE_PKGS=(stow brightnessctl curl wget jq ripgrep fd btop)
 
 # ---------- I3 / X11 EXTRAS ----------
 # X11-specific utilities commonly used with i3 (not needed for Hyprland/Wayland).
