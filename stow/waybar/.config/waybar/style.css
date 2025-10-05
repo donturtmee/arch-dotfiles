@@ -61,6 +61,7 @@ button {
 #disk,
 #network,
 #tray,
+#battery,
 #pulseaudio,
 #custom-power,
 #custom-music-prev,
@@ -80,6 +81,7 @@ button {
 #disk,
 #network,
 #tray,
+#battery,
 #pulseaudio,
 #custom-power
 {
@@ -109,10 +111,26 @@ button {
 
 
 /* === CPU TEMP === */
-#temperature {
-  /* border-radius: 5px 0px 0px 5px; */
+#temperature.critical {
+  color: #d01418;
 }
 
+/* CPU usage states */
+#cpu.warning  { color: #c0801a; }
+#cpu.critical { color: #d01418; }
+
+/* memory usage states */
+#memory.warning  { color: #c0801a; }
+#memory.critical { color: #d01418; }
+
+/* disk usage states */
+#disk.warning  { color: #c0801a; }
+#disk.critical { color: #d01418; }
+
+/* battery states */
+#battery.warning { color: #c0801a; }
+#battery.critical { color: #d01418; }
+#battery.charging { color: #20af10; }
 
 /* === POWER BUTTON === */
 #custom-power {
@@ -120,7 +138,6 @@ button {
   /* border-radius: 0px 5px 5px 0px; */
   margin-right: 1rem;
 }
-
 
 /* === CUSTOM MUSIC === */
 #custom-music,
