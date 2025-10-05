@@ -24,7 +24,25 @@ font pango:JetBrainsMono Nerd Font 12
 # === DISPLAY ===
 
 # Display (--primary for tray)
-exec_always --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 75 --primary
+# exec_always --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 75 --primary
+
+# === DISPLAYS: VARIABILE ===
+set $laptop   eDP-1
+set $external HDMI-1
+
+# === DISPLAYS: LAYOUT & RATES (condițional, într-o singură linie) ===
+exec_always --no-startup-id sh -c 'if xrandr | grep -q "^HDMI-1 connected"; then xrandr --output eDP-1 --mode 1920x1080 --rate 60.06 --pos 0x0 --scale 1x1 --primary --output HDMI-1 --mode 1920x1080 --rate 74.97 --pos 1920x0 --scale 1x1; else xrandr --output eDP-1 --mode 1920x1080 --rate 75 --pos 0x0 --primary --output HDMI-1 --off; fi'
+
+# === WORKSPACES: PINNED ===
+workspace 1 output $laptop
+workspace 2 output $external
+workspace 3 output $external
+workspace 4 output $external
+workspace 5 output $external
+workspace 6 output $external
+workspace 7 output $external
+workspace 8 output $external
+workspace 9 output $external
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
