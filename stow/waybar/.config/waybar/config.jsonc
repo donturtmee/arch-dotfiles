@@ -1,0 +1,120 @@
+{
+  "layer": "top",
+  "position": "top",
+
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces",
+    "custom/music-prev",
+    "custom/music",
+    "custom/music-next"
+  ],
+
+  "modules-center": ["clock"],
+
+  "modules-right": [
+    "temperature",
+    "cpu",
+    "memory",
+    "disk",
+    "pulseaudio",
+    "tray",
+    "custom/power"
+  ],
+
+  "custom/arch": {
+    "format": " ",
+    "tooltip-format": "I use Arch btw"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": { "*": [1,2,3,4,5] }
+  },
+
+  "custom/music-prev": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "playerctl previous; pkill -RTMIN+1 waybar",
+    "interval": 0
+  },
+
+  "custom/music": {
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/music_tooltip.sh",
+    "interval": 1,
+    "signal": 1,
+    "tooltip": true,
+    "on-click": "playerctl play-pause; pkill -RTMIN+1 waybar"
+  },
+
+  "custom/music-next": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "playerctl next; pkill -RTMIN+1 waybar",
+    "interval": 0
+  },
+
+  "clock": {
+    "timezone": "Europe/Bucharest",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+	"calendar": {
+		"mode"          : "year",
+		"mode-mon-col"  : 3,
+		"weeks-pos"     : "right",
+		"on-scroll"     : 1,
+		"format": {
+            "months":   "<span color='#ffffff'><b>{}</b></span>",
+            "days":     "<span color='#cccccc'><b>{}</b></span>",
+            "weeks":    "<span color='#aaaaaa'><b>W {}</b></span>",
+            "weekdays": "<span color='#dddddd'><b>{}</b></span>",
+            "today":    "<span color='#1793D1'><b><u>{}</u></b></span>"
+           }
+	 },
+    "format": "{:%d %b %Y - %H:%M:%S}",
+    "interval": 1
+  },
+
+   "temperature": {
+    "interval": 1,
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp3_input",
+    "critical-threshold": 75,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
+  },
+   
+  "cpu": {
+    "interval": 1,
+    "format": "  {usage}%"
+  },
+
+   "memory": {
+    "interval": 10,
+    "format": "  {used:0.1f}G/{total:0.1f}G"
+  },
+
+   "disk": {
+	"interval": 60,
+	"format": "  {used}"
+  },
+
+   "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "[MUTED]",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/power.sh"
+  }
+}

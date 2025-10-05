@@ -1,0 +1,1 @@
+# Arch Linux Setup — Hyprland + i3

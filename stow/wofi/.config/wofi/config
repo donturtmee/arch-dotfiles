@@ -1,0 +1,8 @@
+# wofi/config
+
+show=drun
+width=30%
+height=400
+location=center
+image_size=25
+hide_scroll=true

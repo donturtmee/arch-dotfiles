@@ -1,0 +1,58 @@
+{
+  "logo": {
+    "type": "none"
+  },
+
+  "display": {
+    "separator": "->   ",
+    "color": {
+      "separator": "1" // Bold
+    },
+    "constants": [
+      "───────────────────────────"
+    ],
+    "key": {
+      "type": "both",
+      "paddingLeft": 4
+    }
+  },
+
+  "modules": [
+    {
+      "type": "title",
+      "format": "                                 {user-name}"
+    },
+    "break",
+
+    {
+      "type": "custom",
+      "format": "┌{$1} {#1}System Information{#} {$1}┐"
+    },
+    "break",
+
+    { "key": " OS           ", "keyColor": "white", "type": "os" },
+    { "key": " Machine      ", "keyColor": "white", "type": "host" },
+    { "key": " Kernel       ", "keyColor": "white", "type": "kernel" },
+    { "key": " Uptime       ", "keyColor": "white", "type": "uptime" },
+    {
+      "key": " Resolution   ",
+      "keyColor": "white",
+      "type": "display",
+      "compactType": "original-with-refresh-rate"
+    },
+    { "key": " WM           ", "keyColor": "white", "type": "wm" },
+    { "key": " DE           ", "keyColor": "white", "type": "de" },
+    { "key": " Shell        ", "keyColor": "white", "type": "shell" },
+    { "key": " Terminal     ", "keyColor": "white", "type": "terminal" },
+    { "key": " CPU          ", "keyColor": "white", "type": "cpu" },
+    { "key": " GPU          ", "keyColor": "white", "type": "gpu" },
+    { "key": " Memory       ", "keyColor": "white", "type": "memory" },
+
+    "break",
+    {
+      "type": "custom",
+      "format": "└{$1}────────────────────{$1}┘"
+    },
+    "break"
+  ]
+}

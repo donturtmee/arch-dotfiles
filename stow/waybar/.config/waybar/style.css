@@ -1,0 +1,161 @@
+/* waybar style.css */
+
+/* === SELECT ALL === */
+* {
+  font-family: JetbrainsMono Nerd Font;
+  font-size: 15px;
+  min-height: 0;
+  padding-bottom: 0px;
+}
+
+#waybar {
+  background: transparent;
+  margin: 2px 2px;
+}
+
+#workspaces {
+  background: #101010;
+  border-radius: 8px;
+  margin: 5px;
+  margin-left: 0.5rem;
+}
+
+
+/* === BUTTONS === */
+button {
+  background: transparent;
+}
+
+#workspaces button {
+  color: #FFFFFF;
+  padding: 0.45rem 0.6rem;
+}
+
+#workspaces button:hover {
+  background: #1e1e1e;
+}
+
+#workspaces button.urgent {
+  color: #FFFFFF;
+  background-color: #eb4d4b;
+}
+
+#workspaces button.active {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+#workspaces button.empty {
+  color: #595959;
+}
+
+#workspaces button.empty.active {
+  background-color: #999999;
+  color: #445569;
+}
+
+#clock,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#network,
+#tray,
+#pulseaudio,
+#custom-power,
+#custom-music-prev,
+#custom-music,
+#custom-music-next
+{
+  color: #d6d6d6;
+  background-color: #101010;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+#clock,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#network,
+#tray,
+#pulseaudio,
+#custom-power
+{
+  margin: 5px 2px; /* space between */
+  border-radius: 5px;
+  /* border-radius: 5px; */ 
+  /* -> remove border-radius from #temperature and #custom-power */
+}
+
+
+/* === ARCH ICON === */
+#custom-arch {
+  border-radius: 5px;
+  background-image: url("/home/donturtmee/Pictures/Icons/blue_arch.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 30px;
+  margin-left: 0.5rem;
+}
+
+
+/* === TIME & DATE === */
+#clock {
+  border-radius: 5px;
+}
+
+
+/* === CPU TEMP === */
+#temperature {
+  /* border-radius: 5px 0px 0px 5px; */
+}
+
+
+/* === POWER BUTTON === */
+#custom-power {
+  color: #e78284;
+  /* border-radius: 0px 5px 5px 0px; */
+  margin-right: 1rem;
+}
+
+
+/* === CUSTOM MUSIC === */
+#custom-music,
+#custom-music-prev,
+#custom-music-next {
+  background: rgba(60, 60, 65, 0.7);
+  color: #e0e0e0;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* === CUSTOM MUSIC PREV === */
+#custom-music-prev {
+  border-radius: 8px 0 0 8px;
+  margin-left: 6px;
+}
+
+/* === CUSTOM MUSIC PLAY/PAUSE === */
+#custom-music {
+  border-radius: 0;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+}
+
+/* === CUSTOM MUSIC NEXT === */
+#custom-music-next {
+  border-radius: 0 8px 8px 0;
+}
+
+#custom-music:hover,
+#custom-music-prev:hover,
+#custom-music-next:hover {
+  background: rgba(60, 60, 65, 0.9);
+  color: gray;
+}
