@@ -5,7 +5,7 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 source "$REPO_ROOT/lib/helpers.sh"
 
 NVM_VERSION="${NVM_VERSION:-v0.40.3}"   # poți suprascrie cu: NVM_VERSION=v0.x ./node.sh
-NODE_VERSION="${NODE_VERSION:-22}"      # poți suprascrie cu: NODE_VERSION=20 ./node.sh
+NODE_VERSION="${NODE_VERSION:-24}"      # poți suprascrie cu: NODE_VERSION=20 ./node.sh
 
 log "==> NODE: installing NVM ($NVM_VERSION) and Node.js $NODE_VERSION"
 

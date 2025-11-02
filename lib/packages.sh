@@ -91,4 +91,10 @@ FILES_PKGS=(zip unzip 7zip tar gzip bzip2 xz zstd file-roller nemo nemo-fileroll
 # dmenu, dolphin, dunst, grim, htop, hyprland, i3-wm, i3blocks, i3lock, i3status,
 # iwd, kitty, lightdm, lightdm-gtk-greeter, nano, openssh, polkit-kde-agent,
 # qt5-wayland, qt6-wayland, slurp, smartmontools, uwsm, vim, wget, wireless_tools,
-# wofi, wpa_supplicant, xdg-desktop-portal-hyprland, xdg-utils, xss-lock, xterm.
+# wofi, wpa_supplicant, xdg-desktop-portal-hyprland, xdg-utils, xss-lock, xterm.'
+
+# sudo pacman -S bluez bluez-utils
+# sudo pacman -S blueman
+# systemctl status bluetooth
+# sudo systemctl enable bluetooth.service
+# sudo systemctl start bluetooth.service
